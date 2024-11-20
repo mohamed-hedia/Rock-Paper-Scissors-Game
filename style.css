@@ -1,0 +1,182 @@
+/* Reset Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(
+    45deg,
+    #ff9a9e,
+    #fad0c4,
+    #fbc2eb,
+    #a1c4fd,
+    #c2e9fb
+  );
+  background-size: 300% 300%;
+  animation: gradient 6s ease infinite;
+}
+
+/* Gradient Animation */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Game Container */
+.game-container {
+  text-align: center;
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+
+  max-width: 400px;
+  width: 90%;
+  animation: pop-in 0.5s ease-out;
+}
+
+/* Animation for appearance */
+@keyframes pop-in {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Title */
+h1 {
+  font-size: 26px;
+  color: #ff5722;
+  margin-bottom: 20px;
+}
+
+/* Message */
+#message {
+  font-size: 27px;
+  margin-bottom: 20px;
+  color: #063f80;
+}
+
+/* Choices */
+.choices {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.choice {
+  flex: 1;
+  margin: 0 5px;
+  padding: 15px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #6200ea;
+  color: white;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.choice:hover {
+  background-color: #3700b3;
+  transform: scale(1.1);
+}
+
+/* Play Again Section */
+#play-again-container {
+  margin-top: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+.action-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #03dac5;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.action-btn:hover {
+  background-color: #018786;
+}
+
+/* Sparkles */
+.sparkles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.8), transparent);
+  animation: sparkles-animation 1s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes sparkles-animation {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* "Thanks for playing" message */
+.thanks-container {
+  text-align: center;
+  color: #ff4081;
+  font-family: "Arial Black", sans-serif;
+  font-size: 36px;
+  animation: fade-in 1s ease-in;
+}
+
+/* Fade-in animation */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .choice {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  #message {
+    font-size: 20px;
+  }
+
+  .thanks-container {
+    font-size: 28px;
+  }
+}
